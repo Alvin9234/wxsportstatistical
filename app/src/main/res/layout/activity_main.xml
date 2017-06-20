@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"/>
 
-        <com.ldoublem.wxsportstatistical.view.WXSportStatistics
+        <com.ldoublem.wxsportstatistical.view.WXSportStatistics2
             android:id="@+id/wxs_statistics"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
