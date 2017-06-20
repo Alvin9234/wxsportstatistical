@@ -136,7 +136,7 @@ public class WXSportStatistics2 extends View implements OnTouchListener {
                         h = maxAbsY;
                     }else {
                         if(minAbsY - absHeight<= maxAbsY){
-                            h = minAbsY - absHeight + maxAbsY;
+                            h = Math.abs(minAbsY - absHeight) + maxAbsY;
                         }else{
                             h = minAbsY - absHeight;
                         }
@@ -174,7 +174,7 @@ public class WXSportStatistics2 extends View implements OnTouchListener {
                             stopY = maxAbsY;
                         }else {
                             if(minAbsY - stopAbsHeight<= maxAbsY){
-                                stopY = minAbsY - stopAbsHeight + maxAbsY;
+                                stopY = Math.abs(minAbsY - stopAbsHeight) + maxAbsY;
                             }else{
                                 stopY = minAbsY - stopAbsHeight;
                             }
@@ -247,7 +247,7 @@ public class WXSportStatistics2 extends View implements OnTouchListener {
                             h = maxAbsY;
                         }else {
                             if(minAbsY - pointAbsY<= maxAbsY){
-                                h = minAbsY - pointAbsY + maxAbsY;
+                                h = Math.abs(minAbsY - pointAbsY) + maxAbsY;
                             }else{
                                 h = minAbsY - pointAbsY;
                             }
