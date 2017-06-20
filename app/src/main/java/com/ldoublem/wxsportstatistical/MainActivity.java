@@ -17,12 +17,14 @@ public class MainActivity extends AppCompatActivity implements  WXSportStatistic
     TextView test;
     WXSportStatistics wxs_statistics;
     Random random = new Random();
+    DottedText dottedText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wxs_statistics = (WXSportStatistics) findViewById(R.id.wxs_statistics);
         test = (TextView) findViewById(R.id.btn_test);
+        dottedText = (DottedText) findViewById(R.id.dottedText);
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements  WXSportStatistic
             }
         }
         wxs_statistics.setValue(listValueNum, false, true, listday, this, R.id.wxs_statistics);
+        dottedText.setValue(listValueNum);
     }
 
 
@@ -67,7 +70,9 @@ public class MainActivity extends AppCompatActivity implements  WXSportStatistic
                 wxs_statistics.select = item;
                 wxs_statistics.selectbottom = item;
                 wxs_statistics.ShowView();
-
+                
+                dottedText.select = item;
+                dottedText.onSelectItem(item);
                 break;
             default:
                 break;
