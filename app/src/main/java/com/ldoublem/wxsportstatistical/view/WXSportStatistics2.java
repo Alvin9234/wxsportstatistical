@@ -31,6 +31,7 @@ public class WXSportStatistics2 extends View implements OnTouchListener {
     List<String> listDAY = new ArrayList<>();//底部日期
     int MaxValue = 0;
     float minAbsY;//最小y,显示在X轴,结合坐标轴，每个点的相应y值为minAbsY - 绝对高度
+    float maxAbsY;//最大y,结合坐标轴，每个点的相应y值为文字高度 + CircleR
 
     private Paint paintBg;//背景
     private Paint paint;//折线,点
@@ -110,6 +111,7 @@ public class WXSportStatistics2 extends View implements OnTouchListener {
         mShader = new LinearGradient(0, 0, 0, getHeight(), new int[]{color_w,
                 getResources().getColor(R.color.transparency)}, null, Shader.TileMode.CLAMP);
         paintBg.setShader(mShader);
+        maxAbsY = (int) getTextHigh(paintText2)+CircleR;
     }
 
     @Override
@@ -131,10 +133,10 @@ public class WXSportStatistics2 extends View implements OnTouchListener {
                 }else{
                     float absHeight = High * listValue.get(i) / MaxValue;
                     if(absHeight >= High){//最大值
-                        h = (int) getTextHigh(paintText2)+CircleR;
+                        h = maxAbsY;
                     }else {
-                        if(minAbsY - absHeight<= (int) getTextHigh(paintText2)+CircleR){
-                            h = minAbsY - absHeight + (int) getTextHigh(paintText2)+CircleR;
+                        if(minAbsY - absHeight<= maxAbsY){
+                            h = minAbsY - absHeight + maxAbsY;
                         }else{
                             h = minAbsY - absHeight;
                         }
@@ -169,10 +171,10 @@ public class WXSportStatistics2 extends View implements OnTouchListener {
                         float stopAbsHeight = High * listValue.get(i + 1) / MaxValue;
 
                         if(stopAbsHeight >= High){//最大值
-                            stopY = (int) getTextHigh(paintText2)+CircleR;
+                            stopY = maxAbsY;
                         }else {
-                            if(minAbsY - stopAbsHeight<= (int) getTextHigh(paintText2)+CircleR){
-                                stopY = minAbsY - stopAbsHeight + (int) getTextHigh(paintText2)+CircleR;
+                            if(minAbsY - stopAbsHeight<= maxAbsY){
+                                stopY = minAbsY - stopAbsHeight + maxAbsY;
                             }else{
                                 stopY = minAbsY - stopAbsHeight;
                             }
@@ -242,10 +244,10 @@ public class WXSportStatistics2 extends View implements OnTouchListener {
                         float pointAbsY = High * listValue.get(i) / MaxValue;
 
                         if(pointAbsY >= High){//最大值
-                            h = (int) getTextHigh(paintText2)+CircleR;
+                            h = maxAbsY;
                         }else {
-                            if(minAbsY - pointAbsY<= (int) getTextHigh(paintText2)+CircleR){
-                                h = minAbsY - pointAbsY + (int) getTextHigh(paintText2)+CircleR;
+                            if(minAbsY - pointAbsY<= maxAbsY){
+                                h = minAbsY - pointAbsY + maxAbsY;
                             }else{
                                 h = minAbsY - pointAbsY;
                             }
