@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ldoublem.wxsportstatistical.view.WXSportStatistics;
+import com.ldoublem.wxsportstatistical.view.WXSportStatistics2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +15,14 @@ public class MainActivity extends AppCompatActivity implements  WXSportStatistic
     List<Integer> listValueNum = new ArrayList<Integer>();
     List<String> listday = new ArrayList<String>();
     TextView test;
-    WXSportStatistics wxs_statistics;
+    WXSportStatistics2 wxs_statistics;
     Random random = new Random();
     DottedText dottedText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        wxs_statistics = (WXSportStatistics) findViewById(R.id.wxs_statistics);
+        wxs_statistics = (WXSportStatistics2) findViewById(R.id.wxs_statistics);
         test = (TextView) findViewById(R.id.btn_test);
         dottedText = (DottedText) findViewById(R.id.dottedText);
         test.setOnClickListener(new View.OnClickListener() {
