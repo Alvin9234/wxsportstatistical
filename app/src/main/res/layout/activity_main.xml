@@ -20,10 +20,15 @@
         <com.ldoublem.wxsportstatistical.view.DottedLine
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"></com.ldoublem.wxsportstatistical.view.DottedLine>
+            android:layout_centerVertical="true"/>
 
         <com.ldoublem.wxsportstatistical.view.WXSportStatistics
             android:id="@+id/wxs_statistics"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+        <com.ldoublem.wxsportstatistical.view.DottedText
+            android:id="@+id/dottedText"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </RelativeLayout>
